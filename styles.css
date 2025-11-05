@@ -3,7 +3,12 @@ body {
     font-family: Arial, sans-serif;
     overflow-x: hidden; /* Evitar rolagem horizontal */
     background-color: #000; /* Fundo preto */
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
+
+
 
 /* Animação de bolas coloridas */
 .background {
@@ -20,13 +25,13 @@ body {
     position: absolute;
     border-radius: 50%;
     filter: blur(30px); /* Efeito de blur */
-    animation: float 6s ease-in-out infinite;
+    animation: float 2s ease-in-out infinite;
 }
 
 .ball1 {
     background: rgba(255, 20, 147, 0.6); /* Rosa */
-    width: 200px;
-    height: 200px;
+    width: 270px;
+    height: 270px;
     left: 10%;
     top: 20%;
     animation-delay: 0s;
@@ -38,7 +43,7 @@ body {
     height: 250px;
     left: 40%;
     top: 60%;
-    animation-delay: 2s;
+    animation-delay: 1s;
 }
 
 .ball3 {
@@ -47,15 +52,21 @@ body {
     height: 300px;
     left: 70%;
     top: 30%;
-    animation-delay: 4s;
+    animation-delay: 2s;
 }
 
 @keyframes float {
     0%, 100% {
-        transform: translateY(0);
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(-30px, -60px); /* Mover para cima e para a esquerda */
     }
     50% {
-        transform: translateY(-20px);
+        transform: translate(30px, -60px); /* Mover para cima e para a direita */
+    }
+    75% {
+        transform: translate(0, 0); /* Retornar ao ponto original */
     }
 }
 
@@ -263,64 +274,74 @@ p {
 
 /* Estilização da seção de formação acadêmica */
 .education-container {
-    margin-top: 50px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    color: #fff;
-}
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            color: #fff;
+        }
 
-.education h2 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
+        .education h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
 
-.education {
-    display: flex; /* Permite centralizar os balões */
-    justify-content: center; /* Centraliza os balões horizontalmente */
-    flex-wrap: wrap; /* Permite que os balões envolvam */
-}
+        .education {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-.degree {
-    margin: 10px; /* Espaçamento uniforme entre os balões */
-}
+        .degree {
+            margin: 10px;
+        }
 
-.balloon {
-    background-color: rgba(255, 20, 147, 0.9);
-    border-radius: 15px;
-    padding: 8px; /* Menor padding para balões menores */
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    animation: float 3s ease-in-out infinite; /* Animação de flutuação */
-    min-width: 150px; /* Largura mínima para os balões */
-}
+        .balloon {
+            background-color: rgba(255, 20, 147, 0.9);
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            width: 200px;
+            height: 130px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
 
-.balloon h3 {
-    font-size: 1.2em; /* Tamanho da fonte reduzido */
-    margin-bottom: 5px;
-}
+        .balloon:hover {
+            transform: scale(1.05);
+            background-color: rgb(110, 8, 119);
+        }
 
-.balloon p {
-    margin: 3px 0; /* Espaçamento entre as linhas */
-}
+        .balloon h3 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px); /* Leve flutuação */
-    }
-}
+        .balloon p {
+            margin: 3px 0;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
 
 /* Estilização da seção de projetos */
 .projects-container {
     margin-top: 50px;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
+    border-radius: 50px;
     color: #fff;
 }
 
@@ -330,10 +351,18 @@ p {
 }
 
 .project img {
-    width: 150px;
-    height: auto;
+     width: 250px; /* Aumenta a largura da imagem */
+    height: auto; /* Mantém a proporção */
     border-radius: 10px;
     margin-bottom: 10px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Adiciona transição suave */
+}
+
+
+.project img:hover {
+    transform: scale(1.05); /* Aumenta levemente a imagem ao passar o mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adiciona sombra ao passar o mouse */
+
 }
 
 .project a {
@@ -378,45 +407,115 @@ p {
 }
 
 .contact-container {
-    margin-top: 50px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8); /* Fundo mais escuro */
-    border-radius: 10px;
-    color: #fff;
+            text-align: center;
+            padding: 100px;
+            color: #fff;
+        }
+
+
+
+  .contact-buttons {
+            display: flex;
+            gap: 20px;
+        }
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            height: 50px;
+            background-color:rgba(255, 20, 147);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .button:hover {
+            transform: scale(1.1);
+            background-color: rgba(75, 0, 130, 1);
+        }
+        .button i {
+            margin-right: 8px;
+            border-radius: 50px;
+        }
+
+        .contact-container {
     text-align: center;
+    padding: 100px;
 }
 
-.contact-container h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.contact-links {
+.contact-buttons {
     display: flex;
     justify-content: center;
-    flex-direction: column; /* Coloca os links um embaixo do outro */
-    align-items: center; /* Centraliza os itens */
+    gap: 20px;
 }
 
-.contact-link {
-    background-color: rgba(255, 20, 147, 0.9);
-    border-radius: 5px;
-    color: #fff;
-    text-decoration: none;
-    padding: 15px 25px; /* Aumentado para um visual mais 'gordinho' */
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    transition: background-color 0.3s, transform 0.3s; /* Adicionando transição */
-    width: 200px; /* Largura fixa para as caixinhas */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para efeito de profundidade */
+
+
+.circle {
+            width: 60px; /* Tamanho da bolinha */
+            height: 60px; /* Tamanho da bolinha */
+            background-color: rgba(255, 20, 147);/* Cor da bolinha */
+            border-radius: 50%; /* Forma circular */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 20px; /* Distância do fundo da página */
+            left: 50%;
+            transform: translateX(-50%); /* Centraliza horizontalmente */
+            animation: bounce 1s infinite; /* Animação de pulo */
+        }
+
+        .arrow {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 20px solid #fff; /* Cor da setinha */
+            position: relative;
+            top: 5px; /* Ajuste para posicionar a seta dentro da bolinha */
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+
+    html {
+    scroll-behavior: smooth; /* Ativa a rolagem suave */
 }
 
-.contact-link i {
-    margin-right: 10px; /* Espaço entre o ícone e o texto */
+/* Estilizando a barra de rolagem */
+::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+    background: linear-gradient(to bottom, #000000, #ce1095); /* Fundo com gradiente */
+    border-radius: 10px; /* Barras com cantos arredondados */
 }
 
-.contact-link:hover {
-    background-color: rgba(75, 0, 130, 1); /* Azul no hover */
-    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ce1095, #000000); /* Parte que pode ser arrastada com gradiente */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #ce1095, #000000); /* Cor ao passar o mouse */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; /* Fundo do caminho da barra de rolagem */
+    border-radius: 10px; /* Barras com cantos arredondados */
+}
+
+/* Estilizando a barra de rolagem no Firefox */
+body {
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #f9f9f9; /* Cor da parte arrastável e do fundo */
 }

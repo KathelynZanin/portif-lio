@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifólio</title>
+    <link rel="icon" href="img/K.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -15,20 +16,27 @@
         <div class="ball ball3"></div>
     </div>
     
+
     <nav class="navbar" id="navbar">
+        <a href="#sobre">Sobre</a>
         <a href="#projetos">Projetos</a>
         <a href="#contato">Contato</a>
-        <a href="#sobre">Sobre</a>
     </nav>
 
     <div class="container">
-        <h1>Olá, eu sou</h1>
-        <h2>Dev Iniciante</h2>
-        <p>Estudante de DSM | Explorando o mundo do desenvolvimento</p>
+        <h1>Olá, eu sou a</h1>
+        <h2>Kathelyn!</h2>
+        <p>Dev Iniciante | Estudante de DSM | Explorando o mundo do desenvolvimento</p>
         <p>Técnico em Administração pela ETEC, agora cursando Desenvolvimento de Software Multiplataforma na FATEC. Aprendendo cada dia mais sobre tecnologia!</p>
+
+
         <div class="buttons">
             <a href="#projetos" class="btn">Ver Projetos</a>
             <a href="#contato" class="btn">Entrar em Contato</a>
+
+             <div class="circle">
+        <div class="arrow"></div>
+    </div>
         </div>
     </div>
 
@@ -44,7 +52,7 @@
     <div class="about-me-container" id="sobre">
         <div class="about-me">
             <h2>Sobre Mim</h2>
-            <p>Sou estudante de Desenvolvimento de Software Multiplataforma, apaixonado por tecnologia e em constante aprendizado. Minha jornada começou com a administração e agora estou descobrindo o incrível mundo da programação!</p>
+            <p>Sou estudante de Desenvolvimento de Software Multiplataforma, apaixonada por tecnologia e em constante aprendizado. Minha jornada começou com a administração e agora estou descobrindo o incrível mundo da programação!</p>
             <p>Concluí o técnico em Administração na ETEC, onde desenvolvi habilidades de gestão e organização. Agora, na FATEC, estou mergulhando no universo do desenvolvimento, aprendendo sobre front-end, back-end e muito mais.</p>
             <p>Estou focado em aprender HTML, CSS, JavaScript, React e outras tecnologias modernas. Cada projeto é uma nova oportunidade de crescimento e aprendizado!</p>
         </div>
@@ -76,10 +84,19 @@
                 <p>Desenvolvimento de Software Multiplataforma</p>
                 <p>Em andamento - 1º Semestre</p>
             </div>
-            <div class="degree balloon">
+
+
+            <div class="degree balloon" >
                 <h3>ETEC</h3>
                 <p>Técnico em Administração</p>
                 <p>Concluído</p>
+                </div>
+
+            <div class="degree balloon">
+                <h3>ESCOLA DE INOVADORES</h3>
+                <P>Curso sobre inovação e criatividade</P>
+                <p>Concluido</p>
+            </div>
             </div>
         </div>
     </div>
@@ -88,37 +105,47 @@
         <h2>Projetos</h2>
         <div class="project">
             <h3>Site da UNES</h3>
-            <img src="unes.png" alt="Site da UNES">
-            <p>Projeto de um site para a faculdade UNES, com informações e recursos para alunos.</p>
+            <img src="img/unes.png" alt="Site da UNES">
+            <p>Recriei um site já existente da faculdade UNES como parte de uma prática individual. O site oferece informações e recursos úteis para os alunos, como notícias, eventos e serviços disponíveis. Foquei em deixá-lo mais bonito e fácil de usar</p>
             <a href="https://github.com/KathelynZanin/rk" target="_blank">Ver no GitHub</a>
+             <a href="https://rk-theta.vercel.app/" target="_blank">Ver no vercel</a>
         </div>
         <div class="project">
             <h3>API de Censo 2022</h3>
-            <img src="api.webp" alt="API de Censo 2022">
-            <p>API focada em transformar dados de São José dos Campos em gráficos para análise.</p>
+            <img src="img/api.webp" alt="API de Censo 2022">
+            <p>Neste projeto em grupo, trabalhei no front-end, cuidando da escolha de cores, logotipo e prototipação no Figma. A API fornece dados demográficos detalhados e mapas interativos da cidade, ajudando cidadãos e planejadores urbanos a entender melhor o ambiente em que vivem.</p>
             <a href="https://github.com/OmniDevsOficial/API-Censo-2022" target="_blank">Ver no GitHub</a>
+            <a href="https://api-censo-2022.vercel.app/" target="_blank">Ver no vercel</a>
         </div>
         <div class="project">
             <h3>Doces Simples</h3>
-            <img src="doces.webp" alt="Doces Simples">
-            <p>Site com várias receitas de doces simples, ideal para quem ama cozinhar!</p>
+            <img src="img/doces.webp" alt="Doces Simples">
+            <p>Desenvolvi um site de receitas de doces simples. O objetivo é compartilhar receitas fáceis e deliciosas, tornando a experiência de cozinhar mais acessível e divertida para todos que amam a culinária.</p>
             <a href="https://github.com/KathelynZanin/Doces-Simples" target="_blank">Ver no GitHub</a>
+            <a href="https://doces-simples.vercel.app/" target="_blank">Ver no vercel</a>
         </div>
     </div>
+
+
+
 <div class="contact-container" id="contato">
     <h2>Entre em Contato</h2>
     <p>Se você quiser conversar, sinta-se à vontade para me contatar!</p>
-    <div class="contact-links">
-        <a href="https://github.com/KathelynZanin" target="_blank" class="contact-link">
-            <i class="fab fa-github"></i>
-            GitHub
+
+<div class="contact-buttons">
+        <a class="button" href="https://github.com/KathelynZanin" target="_blank">
+            <i class="fab fa-github"></i> GitHub
         </a>
-        <a href="mailto:kathelynzanin@gmail.com" class="contact-link">
-            <i class="fas fa-envelope"></i>
-            Email
+        <a class="button" href="mailto:kathelynzanin@gmail.com">
+            <i class="fas fa-envelope"></i> Email
+        </a>
+        <a class="button" href="https://www.linkedin.com/in/kathelyn-cau%C3%A2ne-de-oliveira-zanin-608b68346/" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a class="button" href="https://wa.me/5512988181937" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
     </div>
-</div>
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
