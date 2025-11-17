@@ -212,6 +212,7 @@ p {
 /* Estilização da seção "Sobre Mim" e habilidades */
 .about-me-container {
     display: flex;
+    flex-wrap: wrap; /* Permite que as colunas quebrem em telas menores */
     justify-content: space-between; /* Espaçamento entre as colunas */
     margin-top: 50px; /* Espaço acima da seção */
     padding: 50px; /* Padding para a seção */
@@ -219,6 +220,7 @@ p {
 
 .about-me {
     flex: 1; /* Permite que a seção ocupe espaço */
+    min-width: 300px; /* Largura mínima para melhorar a responsividade */
     padding-right: 20px; /* Espaço à direita da seção "Sobre Mim" */
     color: #fff;
     background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com transparência */
@@ -234,6 +236,7 @@ p {
 
 .about-me p {
     margin-bottom: 20px; /* Espaço entre os parágrafos */
+     line-height: 1.6; /* Altura de linha para melhor legibilidade */
 }
 
 /* Estilização dos balões de habilidades */
@@ -242,6 +245,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-around; /* Espaçamento uniforme entre os balões */
+     margin-left: 20px; /* Adiciona margem à esquerda */
 }
 
 .skill-balloon {
@@ -270,6 +274,25 @@ p {
     margin-bottom: 20px; /* Espaço abaixo do título */
     text-align: center; /* Centraliza o título */
     color: #fff; /* Cor do texto */
+}
+
+
+/* Estilo responsivo */
+@media (max-width: 700px) {
+    .about-me-container {
+        flex-direction: column; /* Altera o layout para coluna em telas pequenas */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .about-me {
+        margin-bottom: 20px; /* Adiciona espaço embaixo em telas pequenas */
+        width: 80%; /* Garante que ocupa a largura disponível */
+    }
+
+    .skill-balloons {
+        margin-left: 0; /* Remove margem esquerda em telas pequenas */
+        width: 80%; /* Garante que ocupa a largura disponível */
+    }
 }
 
 /* Estilização da seção de formação acadêmica */
@@ -452,7 +475,10 @@ p {
     gap: 20px;
 }
 
-
+.container {
+    position: relative; /* Adicionado para permitir o posicionamento absoluto da bolinha */
+    text-align: center; /* Centraliza o conteúdo, se necessário */
+}
 
 .circle {
             width: 60px; /* Tamanho da bolinha */
@@ -488,6 +514,22 @@ p {
             }
         }
 
+
+
+        /* Estilização responsiva */
+@media (max-width: 600px) {
+    .circle {
+        width: 50px; /* Reduz o tamanho da bolinha em telas menores */
+        height: 50px; /* Reduz o tamanho da bolinha em telas menores */
+        bottom: 15px; /* Ajusta a distância do fundo */
+    }
+}
+           .arrow {
+        border-top: 15px solid #fff; /* Reduz o tamanho da seta em telas menores */
+    }
+
+
+
     html {
     scroll-behavior: smooth; /* Ativa a rolagem suave */
 }
@@ -519,3 +561,14 @@ body {
     scrollbar-width: thin;
     scrollbar-color: #007bff #f9f9f9; /* Cor da parte arrastável e do fundo */
 }
+
+.about-me-content {
+    max-width: 800px; /* Define uma largura máxima para o contêiner */
+    margin: 0 auto; /* Centraliza o contêiner */
+    padding: 20px; /* Adiciona um espaçamento interno */
+    white-space: normal; /* Permite quebras de linha normais */
+    overflow-wrap: break-word; /* Permite que palavras longas quebrem */
+}   
+
+
+
