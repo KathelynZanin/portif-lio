@@ -571,4 +571,146 @@ body {
 }   
 
 
+/* Painel admin */
+
+.admin-panel{
+    margin-top:40px;
+    padding:30px;
+    max-width:500px;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: rgba(255, 20, 147, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    text-align:center;
+}
+
+.admin-panel h3{
+    color:#fff;
+    margin-bottom:20px;
+    font-family:'Georgia', serif;
+}
+
+/* Formulário */
+
+.admin-form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+/* Inputs */
+
+.admin-form input{
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    outline:none;
+    background-color: rgba(0,0,0,0.5);
+    color:white;
+    font-size:14px;
+}
+
+/* Placeholder */
+
+.admin-form input::placeholder{
+    color: rgba(255,255,255,0.7);
+}
+
+/* Botão */
+
+.admin-form button{
+    padding:12px;
+    border:none;
+    border-radius:25px;
+    background-color: rgba(255, 20, 147, 0.9);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.admin-form button:hover{
+    background-color: rgba(75, 0, 130, 1);
+    transform:scale(1.05);
+}
+
+.fade-in{
+
+opacity:0;
+transform:translateY(20px);
+animation:aparecer 0.6s forwards;
+
+}
+
+@keyframes aparecer{
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+.admin-buttons{
+
+margin-top:10px;
+
+display:flex;
+gap:10px;
+justify-content:center;
+
+}
+
+.admin-buttons button{
+
+border:none;
+padding:8px 14px;
+border-radius:8px;
+cursor:pointer;
+background:rgba(255,20,147,0.9);
+color:white;
+
+transition:0.3s;
+
+}
+
+.admin-buttons button:hover{
+
+transform:scale(1.1);
+background:rgba(75,0,130,1);
+
+}
+
+/* Esconde input padrão */
+.file-upload input{
+display:none;
+}
+
+/* Botão personalizado */
+
+.custom-file-upload{
+
+display:inline-block;
+padding:10px 20px;
+border-radius:25px;
+background-color: rgba(255,20,147,0.9);
+color:white;
+cursor:pointer;
+transition:0.3s;
+font-weight:bold;
+
+}
+
+.custom-file-upload:hover{
+
+background-color: rgba(75,0,130,1);
+transform:scale(1.05);
+
+}
+
+
 

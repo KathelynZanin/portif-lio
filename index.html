@@ -23,9 +23,10 @@
         <a href="#contato">Contato</a>
     </nav>
 
+
     <div class="container">
-        <h1>Olá, eu sou a</h1>
-        <h2>Kathelyn!</h2>
+        <h1 id='saudacao'></h1>
+        <h2>Kathelyn Cauane de Oliveira Zanin</h2>
         <p>Dev Iniciante | Estudante de DSM | Explorando o mundo do desenvolvimento</p>
         <p>Técnico em Administração pela ETEC, agora cursando Desenvolvimento de Software Multiplataforma na FATEC. Aprendendo cada dia mais sobre tecnologia!</p>
 
@@ -39,7 +40,7 @@
     </div>
         </div>
     </div>
-
+    
     <div class="link-balls">
         <a href="https://github.com/KathelynZanin" class="link-ball github-ball" target="_blank">
             <i class="fab fa-github"></i>
@@ -82,7 +83,7 @@
             <div class="degree balloon">
                 <h3>FATEC</h3>
                 <p>Desenvolvimento de Software Multiplataforma</p>
-                <p>Em andamento - 1º Semestre</p>
+                <p>Em andamento - 2º Semestre</p>
             </div>
 
 
@@ -103,32 +104,38 @@
         </div>
     </div>
 
-    <div class="projects-container" id="projetos">
-        <h2>Projetos</h2>
-        <div class="project">
-            <h3>Site da UNES</h3>
-            <img src="img/unes.png" alt="Site da UNES">
-            <p>Recriei um site já existente da faculdade UNES como parte de uma prática individual. O site oferece informações e recursos úteis para os alunos, como notícias, eventos e serviços disponíveis. Foquei em deixá-lo mais bonito e fácil de usar</p>
-            <a href="https://github.com/KathelynZanin/rk" target="_blank">Ver no GitHub</a>
-             <a href="https://rk-theta.vercel.app/" target="_blank">Ver no vercel</a>
-        </div>
-        <div class="project">
-            <h3>API de Censo 2022</h3>
-            <img src="img/api.webp" alt="API de Censo 2022">
-            <p>Neste projeto em grupo, trabalhei no front-end, cuidando da escolha de cores, logotipo e prototipação no Figma. A API fornece dados demográficos detalhados e mapas interativos da cidade, ajudando cidadãos e planejadores urbanos a entender melhor o ambiente em que vivem.</p>
-            <a href="https://github.com/OmniDevsOficial/API-Censo-2022" target="_blank">Ver no GitHub</a>
-            <a href="https://api-censo-2022.vercel.app/" target="_blank">Ver no vercel</a>
-        </div>
-        <div class="project">
-            <h3>Doces Simples</h3>
-            <img src="img/doces.webp" alt="Doces Simples">
-            <p>Desenvolvi um site de receitas de doces simples. O objetivo é compartilhar receitas fáceis e deliciosas, tornando a experiência de cozinhar mais acessível e divertida para todos que amam a culinária.</p>
-            <a href="https://github.com/KathelynZanin/Doces-Simples" target="_blank">Ver no GitHub</a>
-            <a href="https://doces-simples.vercel.app/" target="_blank">Ver no vercel</a>
-        </div>
-    </div>
+<div class="projects-container" id="projetos">
+    <h2>Projetos</h2>
 
+    <div id="lista-projetos"></div>
 
+   <div id="admin-area" class="admin-panel" style="display:none;">
+
+    <h3>Adicionar Novo Projeto</h3>
+
+    <div class="admin-form">
+
+<input id="nomeProjeto" placeholder="Nome do projeto">
+
+<input id="descricaoProjeto" placeholder="Descrição do projeto">
+
+<input id="githubProjeto" placeholder="Link do GitHub">
+
+<input id="vercelProjeto" placeholder="Link do Vercel">
+
+<div class="file-upload">
+<label for="imagemProjeto" class="custom-file-upload">
+📷 Escolher Imagem
+</label>
+<input type="file" id="imagemProjeto">
+</div>
+
+<button onclick="criarProjeto()">Adicionar Projeto</button>
+
+</div>
+    
+
+</div>
 
 <div class="contact-container" id="contato">
     <h2>Entre em Contato</h2>
@@ -151,7 +158,11 @@
         </a>
     </div>
 
+<button onclick="loginAdmin()" style="position:fixed; bottom:20px; right:20px;">
+Admin
+</button>
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
