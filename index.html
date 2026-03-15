@@ -1,168 +1,268 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifólio</title>
-    <link rel="icon" href="img/K.png" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfólio</title>
+
+<link rel="icon" href="img/K.png" type="image/x-icon">
+
+<link rel="stylesheet" href="styles.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
+
 <body>
 
-    <div class="background">
-        <div class="ball ball1"></div>
-        <div class="ball ball2"></div>
-        <div class="ball ball3"></div>
-    </div>
-    
+<div class="background">
+<div class="ball ball1"></div>
+<div class="ball ball2"></div>
+<div class="ball ball3"></div>
+</div>
 
-    <nav class="navbar" id="navbar">
-        <a href="#sobre">Sobre</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contato">Contato</a>
-    </nav>
+<nav class="navbar" id="navbar">
+<a href="#sobre">Sobre</a>
+<a href="#projetos">Projetos</a>
+<a href="#contato">Contato</a>
+<a href="#admin-area" id="admin-link" style="display:none;">Editar Portfólio</a>
+</nav>
 
+<div class="container">
 
-    <div class="container">
-        <h1 id='saudacao'></h1>
-        <h2>Kathelyn Cauane de Oliveira Zanin</h2>
-        <p>Dev Iniciante | Estudante de DSM | Explorando o mundo do desenvolvimento</p>
-        <p>Técnico em Administração pela ETEC, agora cursando Desenvolvimento de Software Multiplataforma na FATEC. Aprendendo cada dia mais sobre tecnologia!</p>
+<h1 id="saudacao"></h1>
 
+<h2 id="nome"></h2>
 
-        <div class="buttons">
-            <a href="#projetos" class="btn">Ver Projetos</a>
-            <a href="#contato" class="btn">Entrar em Contato</a>
+<p id="titulo"></p>
 
-             <div class="circle">
-        <div class="arrow"></div>
-    </div>
-        </div>
-    </div>
-    
-    <div class="link-balls">
-        <a href="https://github.com/KathelynZanin" class="link-ball github-ball" target="_blank">
-            <i class="fab fa-github"></i>
-        </a>
-        <a href="mailto:kathelynzanin@gmail.com" class="link-ball email-ball">
-            <i class="fas fa-envelope"></i>
-        </a>
-    </div>
+<p id="descricao"></p>
 
-    <div class="about-me-container" id="sobre">
-        <div class="about-me">
-            <h2>Sobre Mim</h2>
-            <p>Sou estudante de Desenvolvimento de Software Multiplataforma, apaixonada por tecnologia e em constante aprendizado. Minha jornada começou com a administração e agora estou descobrindo o incrível mundo da programação!</p>
-            <p>Concluí o técnico em Administração na ETEC, onde desenvolvi habilidades de gestão e organização. Agora, na FATEC, estou mergulhando no universo do desenvolvimento, aprendendo sobre front-end, back-end e muito mais.</p>
-            <p>Estou focado em aprender HTML, CSS, JavaScript, React e outras tecnologias modernas. Cada projeto é uma nova oportunidade de crescimento e aprendizado!</p>
-        </div>
+<div class="buttons">
 
-        <div class="skill-balloons">
-            <div class="skill-balloon">
-                <i class="fas fa-code"></i>
-                <h3>Aprendendo Front-end</h3>
-                <p>Estudando HTML, CSS, JavaScript, React e outras tecnologias web</p>
-            </div>
-            <div class="skill-balloon">
-                <i class="fas fa-clipboard-list"></i>
-                <h3>Background em Administração</h3>
-                <p>Conhecimento em gestão, organização e processos empresariais</p>
-            </div>
-            <div class="skill-balloon">
-                <i class="fas fa-lightbulb"></i>
-                <h3>Pensamento Analítico</h3>
-                <p>Habilidade em resolver problemas e aprender novas tecnologias rapidamente</p>
-            </div>
-        </div>
-    </div>
+<a href="#projetos" class="btn">Ver Projetos</a>
 
-    <div class="education-container">
-        <h2>Formação Acadêmica e Certificados</h2>
-        <div class="education">
-            <div class="degree balloon">
-                <h3>FATEC</h3>
-                <p>Desenvolvimento de Software Multiplataforma</p>
-                <p>Em andamento - 2º Semestre</p>
-            </div>
+<a href="#contato" class="btn">Entrar em Contato</a>
 
+</div>
 
-            <div class="degree balloon" >
-                <i class="fas fa-graduation-cap"></i> <!-- Ícone de certificado -->
-                <h3>ETEC</h3>
-                <p>Técnico em Administração</p>
-                <p>Concluído</p>
-                </div>
+</div>
 
-            <div class="degree balloon" >
-                <i class="fas fa-graduation-cap"></i> <!-- Ícone de certificado -->
-                <h3>ESCOLA DE INOVADORES</h3>
-                <P>Curso sobre inovação</P>
-                <p>Concluido</p>
-            </div>
-            </div>
-        </div>
-    </div>
+</div>
+
+<div class="link-balls">
+
+<a href="https://github.com/KathelynZanin" class="link-ball github-ball" target="_blank">
+<i class="fab fa-github"></i>
+</a>
+
+<a href="mailto:kathelynzanin@gmail.com" class="link-ball email-ball">
+<i class="fas fa-envelope"></i>
+</a>
+
+</div>
+
+<!-- SOBRE MIM -->
+
+<div class="about-me-container" id="sobre">
+
+<div class="about-me">
+
+<h2>Sobre Mim</h2>
+
+<p id="sobreTexto"></p>
+
+<p>
+Concluí o técnico em Administração na ETEC, onde desenvolvi habilidades de gestão e organização.
+</p>
+
+<p>
+Agora, na FATEC, estou mergulhando no universo do desenvolvimento, aprendendo sobre front-end, back-end e muito mais.
+</p>
+
+<p>
+Estou focada em aprender HTML, CSS, JavaScript, React e outras tecnologias modernas.
+</p>
+
+</div>
+
+<div class="skill-balloons">
+
+<div class="skill-balloon">
+
+<i class="fas fa-code"></i>
+
+<h3>Aprendendo Front-end</h3>
+
+<p>Estudando HTML, CSS, JavaScript, React e outras tecnologias web.</p>
+
+</div>
+
+<div class="skill-balloon">
+
+<i class="fas fa-clipboard-list"></i>
+
+<h3>Background em Administração</h3>
+
+<p>Conhecimento em gestão, organização e processos empresariais.</p>
+
+</div>
+
+<div class="skill-balloon">
+
+<i class="fas fa-lightbulb"></i>
+
+<h3>Pensamento Analítico</h3>
+
+<p>Habilidade em resolver problemas e aprender novas tecnologias rapidamente.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- FORMAÇÃO -->
+
+<div class="education-container">
+
+<h2>Formação Acadêmica e Certificados</h2>
+
+<div class="education" id="lista-formacoes"></div>
+
+</div>
+
+<!-- PROJETOS -->
 
 <div class="projects-container" id="projetos">
-    <h2>Projetos</h2>
 
-    <div id="lista-projetos"></div>
+<h2>Projetos</h2>
 
-   <div id="admin-area" class="admin-panel" style="display:none;">
-
-    <h3>Adicionar Novo Projeto</h3>
-
-    <div class="admin-form">
-
-<input id="nomeProjeto" placeholder="Nome do projeto">
-
-<input id="descricaoProjeto" placeholder="Descrição do projeto">
-
-<input id="githubProjeto" placeholder="Link do GitHub">
-
-<input id="vercelProjeto" placeholder="Link do Vercel">
-
-<div class="file-upload">
-<label for="imagemProjeto" class="custom-file-upload">
-📷 Escolher Imagem
-</label>
-<input type="file" id="imagemProjeto">
-</div>
-
-<button onclick="criarProjeto()">Adicionar Projeto</button>
+<div id="lista-projetos"></div>
 
 </div>
-    
 
-</div>
+<!-- CONTATO -->
 
 <div class="contact-container" id="contato">
-    <h2>Entre em Contato</h2>
-    <p>Se você quiser conversar, sinta-se à vontade para me contatar!</p>
+
+<h2>Entre em Contato</h2>
+
+<p>Se quiser conversar, fique à vontade para me chamar.</p>
 
 <div class="contact-buttons">
-        <a class="button" href="https://github.com/KathelynZanin" target="_blank">
-            <i class="fab fa-github"></i> GitHub
-        </a>
-        <a class="button" href="mailto:kathelynzanin@gmail.com">
-            <i class="fas fa-envelope"></i> Email
-        </a>
-        <a class="button" href="https://www.linkedin.com/in/kathelyn-cau%C3%A2ne-de-oliveira-zanin-608b68346/" target="_blank">
-            <i class="fab fa-linkedin"></i> LinkedIn
 
-        <a href="Currículo .pdf" dowload="Currículo.pdf" class="button">
-            <i class="fas fa-file-download"></i> Baixar Currículo
+<a class="button" href="https://github.com/KathelynZanin" target="_blank">
+<i class="fab fa-github"></i> GitHub
+</a>
 
+<a class="button" href="mailto:kathelynzanin@gmail.com">
+<i class="fas fa-envelope"></i> Email
+</a>
 
-        </a>
-    </div>
+<a class="button" href="https://www.linkedin.com/" target="_blank">
+<i class="fab fa-linkedin"></i> LinkedIn
+</a>
+
+</div>
+
+</div>
+
+<!-- BOTÃO ADMIN -->
 
 <button onclick="loginAdmin()" style="position:fixed; bottom:20px; right:20px;">
 Admin
 </button>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="script.js"></script>
+<!-- PAINEL ADMIN -->
+
+<div id="admin-area" class="admin-panel" style="display:none;">
+
+<h2 class="admin-title">Painel Administrativo</h2>
+
+<!-- EDITAR PORTFÓLIO -->
+
+<div class="admin-section">
+
+<h3>Editar Portfólio</h3>
+
+<label>Nome</label>
+<input id="editNome" placeholder="Seu nome">
+
+<label>Título profissional</label>
+<input id="editTitulo" placeholder="Ex: Desenvolvedora Front-end">
+
+<label>Descrição</label>
+<textarea id="editDescricao" placeholder="Descrição curta"></textarea>
+
+<label>Texto Sobre</label>
+<textarea id="editSobre" placeholder="Texto sobre você"></textarea>
+
+<button class="admin-btn salvar" onclick="salvarPortfolio()">
+Salvar Portfólio
+</button>
+
+</div>
+
+<!-- FORMAÇÃO -->
+
+<div class="admin-section">
+
+<h3>Adicionar Formação</h3>
+
+<label>Instituição</label>
+<input id="nomeFormacao" placeholder="Ex: FATEC">
+
+<label>Curso</label>
+<input id="cursoFormacao" placeholder="Nome do curso">
+
+<label>Status</label>
+<input id="statusFormacao" placeholder="Ex: Concluído ou Em andamento">
+
+<button class="admin-btn adicionar" onclick="criarFormacao()">
+Adicionar Formação
+</button>
+
+</div>
+
+<!-- PROJETOS -->
+
+<div class="admin-section">
+
+<h3>Adicionar Projeto</h3>
+
+<label>Nome do Projeto</label>
+<input id="nomeProjeto" placeholder="Nome do projeto">
+
+<label>Descrição</label>
+<textarea id="descricaoProjeto" placeholder="Descrição do projeto"></textarea>
+
+<label>GitHub</label>
+<input id="githubProjeto" placeholder="Link do GitHub">
+
+<label>Site / Vercel</label>
+<input id="vercelProjeto" placeholder="Link do site">
+
+<div class="file-upload">
+
+<label for="imagemProjeto" class="custom-file-upload">
+📷 Escolher Imagem
+</label>
+
+<input type="file" id="imagemProjeto">
+
+</div>
+
+<button class="admin-btn adicionar" onclick="criarProjeto()">
+Adicionar Projeto
+</button>
+
+</div>
+
+</div>
+<script src="script.js"></script>
+
 </body>
 </html>

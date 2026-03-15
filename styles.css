@@ -1,716 +1,594 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden; /* Evitar rolagem horizontal */
-    background-color: #000; /* Fundo preto */
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
+body{
+margin:0;
+font-family:Arial,sans-serif;
+overflow-x:hidden;
+background:#000;
+height:100vh;
+scrollbar-width:thin;
+scrollbar-color:#ce1095 #000;
 }
 
+/* BACKGROUND */
 
-
-/* Animação de bolas coloridas */
-.background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
+.background{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
 }
 
-.ball {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(30px); /* Efeito de blur */
-    animation: float 2s ease-in-out infinite;
+.ball{
+position:absolute;
+border-radius:50%;
+filter:blur(30px);
+animation:float 6s ease-in-out infinite;
 }
 
-.ball1 {
-    background: rgba(255, 20, 147, 0.6); /* Rosa */
-    width: 270px;
-    height: 270px;
-    left: 10%;
-    top: 20%;
-    animation-delay: 0s;
+.ball1{
+background:rgba(255,20,147,0.6);
+width:270px;
+height:270px;
+left:10%;
+top:20%;
 }
 
-.ball2 {
-    background: rgba(75, 0, 130, 0.6); /* Azul */
-    width: 250px;
-    height: 250px;
-    left: 40%;
-    top: 60%;
-    animation-delay: 1s;
+.ball2{
+background:rgba(75,0,130,0.6);
+width:250px;
+height:250px;
+left:40%;
+top:60%;
+animation-delay:1s;
 }
 
-.ball3 {
-    background: rgba(138, 43, 226, 0.6); /* Roxo */
-    width: 300px;
-    height: 300px;
-    left: 70%;
-    top: 30%;
-    animation-delay: 2s;
+.ball3{
+background:rgba(138,43,226,0.6);
+width:300px;
+height:300px;
+left:70%;
+top:30%;
+animation-delay:2s;
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translate(0, 0);
-    }
-    25% {
-        transform: translate(-30px, -60px); /* Mover para cima e para a esquerda */
-    }
-    50% {
-        transform: translate(30px, -60px); /* Mover para cima e para a direita */
-    }
-    75% {
-        transform: translate(0, 0); /* Retornar ao ponto original */
-    }
+@keyframes float{
+0%,100%{transform:translate(0,0);}
+25%{transform:translate(-30px,-60px);}
+50%{transform:translate(30px,-60px);}
+75%{transform:translate(0,0);}
 }
 
-/* Estilização da navbar */
-.navbar {
-    display: flex;
-    justify-content: flex-end; /* Alinhando à direita */
-    align-items: center;
-    background-color: transparent; /* Navbar transparente */
-    padding: 10px 20px; /* Padding para cima e baixo */
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1;
-    transition: background-color 0.3s, backdrop-filter 0.3s; /* Transições suaves */
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:flex-end;
+align-items:center;
+padding:10px 20px;
+position:fixed;
+width:100%;
+top:0;
+z-index:10;
 }
 
-.navbar.scrolled {
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com transparência */
-    backdrop-filter: blur(10px); /* Efeito de blur */
+.navbar a{
+text-decoration:none;
+color:#fff;
+font-weight:bold;
+margin:0 20px;
+position:relative;
+transition:.3s;
 }
 
-.navbar a {
-    text-decoration: none;
-    color: #fff; /* Texto branco para contraste */
-    font-weight: bold;
-    margin: 0 20px; /* Margem entre os itens da navbar */
-    position: relative; /* Para o posicionamento do traço */
-    transition: color 0.3s;
+.navbar a:hover
+
+.navbar a::after{
+content:"";
+position:absolute;
+width:100%;
+height:2px;
+background:#ff1493;
+left:0;
+bottom:-5px;
+transform:scaleX(0);
+transition:.3s;
 }
 
-.navbar a:hover {
-    color: rgba(255, 20, 147, 1); /* Rosa */
+.navbar a:hover::after{
+transform:scaleX(1);
 }
 
-.navbar a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px; /* Altura do traço */
-    background: rgba(255, 20, 147, 1); /* Cor do traço */
-    left: 0;
-    bottom: -5px; /* Distância do traço para baixo */
-    transform: scaleX(0); /* Inicialmente invisível */
-    transition: transform 0.3s; /* Animação do traço */
+/* HERO */
+
+.container{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:#fff;
+padding:20px;
+margin-top:120px;
 }
 
-.navbar a:hover::after {
-    transform: scaleX(1); /* Revela o traço ao passar o mouse */
+h1{
+font-size:5em;
+font-family:Georgia,serif;
+margin:20px 0;
 }
 
-/* Estilização do conteúdo */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centralizando o conteúdo */
-    justify-content: flex-start; /* Alinhando para cima */
-    height: calc(100vh - 100px); /* Reduzindo a altura para dar espaço ao topo */
-    text-align: center; /* Texto centralizado */
-    color: #fff;
-    padding: 20px;
-    margin-top: 100px; /* Para maior espaçamento em relação à navbar */
+h2{
+font-size:2em;
+font-family:Georgia,serif;
+text-align:center;
 }
 
-.project {
-    background-color: rgba(255, 20, 147, 0.5); /* Caixa semi-transparente */
-    border-radius: 10px;
-    padding: 15px; /* Padding interno */
-    margin: 20px 0; /* Espaço entre os projetos */
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s; /* Efeito ao passar o mouse */
+p{
+font-size:1.1em;
+max-width:800px;
+margin:20px auto;
 }
 
-.project:hover {
-    transform: translateY(-5px); /* Elevação ao passar o mouse */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra ao passar o mouse */
+/* BOTÕES PRINCIPAIS */
+
+.buttons{
+margin-top:20px;
 }
 
-.project img {
-    width: 150px;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
+.btn{
+display:inline-block;
+padding:12px 28px;
+margin:5px;
+border:none;
+border-radius:30px;
+background:linear-gradient(135deg,#ff1493,#a100ff);
+color:#fff;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
 }
 
-.project a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: rgba(255, 20, 147, 0.9);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+.btn:hover{
+transform:scale(1.08);
+background:linear-gradient(135deg,#4b0082,#ff1493);
 }
 
-.project a:hover {
-    background-color: rgba(75, 0, 130, 1);
+/* SETA */
+
+.circle{
+width:60px;
+height:60px;
+background:#ff1493;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:40px;
+animation:bounce 1.2s infinite;
 }
 
-h1 {
-    font-size: 5em; /* Fonte bem maior */
-    font-family: 'Georgia', serif; /* Fonte mais delicada */
-    margin: 0;
-    margin-top: 20px; /* Margem superior */
+.arrow{
+width:0;
+height:0;
+border-left:10px solid transparent;
+border-right:10px solid transparent;
+border-top:20px solid #fff;
 }
 
-h2 {
-    font-size: 2em;
-    margin: 10px 0;
-    font-family: 'Georgia', serif; /* Fonte mais delicada */
-    text-align: center;
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(10px);}
 }
 
-p {
-    font-size: 1.1em;
-    max-width: 800px; /* Largura máxima do parágrafo */
-    margin: 20px auto; /* Centralizar e espaçamento */
+/* LINK BALLS LATERAIS */
+
+.link-balls{
+position:fixed;
+left:20px;
+top:50%;
+transform:translateY(-50%);
+display:flex;
+flex-direction:column;
+gap:15px;
+z-index:100;
 }
 
-.buttons {
-    margin-top: 20px;
+.link-ball{
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+color:white;
+text-decoration:none;
+transition:.3s;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    margin: 5px;
-    border: none;
-    border-radius: 30px; /* Botões mais arredondados */
-    background-color: rgba(255, 20, 147, 0.9); /* Rosa */
-    color: #fff;
-    text-decoration: none;
-    font-size: 1em;
-    transition: background-color 0.3s, transform 0.3s;
+.github-ball{
+background:#24292e;
 }
 
-.btn:hover {
-    background-color: rgba(75, 0, 130, 1); /* Azul */
-    transform: scale(1.1); /* Animação de aumento ao passar o mouse */
+.email-ball{
+background:#ff1493;
 }
 
-/* Estilização da seção "Sobre Mim" e habilidades */
-.about-me-container {
-    display: flex;
-    flex-wrap: wrap; /* Permite que as colunas quebrem em telas menores */
-    justify-content: space-between; /* Espaçamento entre as colunas */
-    margin-top: 50px; /* Espaço acima da seção */
-    padding: 50px; /* Padding para a seção */
+.link-ball:hover{
+transform:scale(1.15);
 }
 
-.about-me {
-    flex: 1; /* Permite que a seção ocupe espaço */
-    min-width: 300px; /* Largura mínima para melhorar a responsividade */
-    padding-right: 20px; /* Espaço à direita da seção "Sobre Mim" */
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com transparência */
-    border-radius: 10px; /* Bordas arredondadas */
-    padding: 20px; /* Padding interno */
+/* SOBRE MIM */
+
+.about-me-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:space-between;
+margin-top:80px;
+padding:50px;
+gap:40px;
 }
 
-.about-me h2 {
-    font-size: 2.5em; /* Aumentando o tamanho do título */
-    margin-bottom: 20px; /* Espaçamento inferior */
-    text-align: center; /* Centraliza o título */
+.about-me{
+flex:1;
+min-width:300px;
+color:#fff;
+background:rgba(0,0,0,0.65);
+border-radius:15px;
+padding:30px;
+backdrop-filter:blur(8px);
 }
 
-.about-me p {
-    margin-bottom: 20px; /* Espaço entre os parágrafos */
-     line-height: 1.6; /* Altura de linha para melhor legibilidade */
+.about-me h2{
+font-size:2.5em;
+margin-bottom:20px;
 }
 
-/* Estilização dos balões de habilidades */
-.skill-balloons {
-    flex: 1; /* Permite que a seção ocupe espaço */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around; /* Espaçamento uniforme entre os balões */
-     margin-left: 20px; /* Adiciona margem à esquerda */
+.about-me p{
+line-height:1.6;
 }
 
-.skill-balloon {
-    background-color: rgba(255, 20, 147, 0.9);
-    border-radius: 15px;
-    padding: 20px;
-    text-align: left; /* Texto alinhado à esquerda */
-    color: #fff;
-    transition: transform 0.3s;
-    position: relative; /* Para o ícone */
-    margin-bottom: 15px; /* Espaço entre os balões */
+/* HABILIDADES */
+
+.skill-balloons{
+flex:1;
+display:flex;
+flex-direction:column;
+gap:20px;
 }
 
-.skill-balloon:hover {
-    transform: scale(1.05); /* Aumenta um pouco ao passar o mouse */
+.skill-balloon{
+background:linear-gradient(135deg,#ff1493,#4b0082);
+border-radius:15px;
+padding:20px;
+color:#fff;
+transition:.3s;
 }
 
-.skill-balloon i {
-    font-size: 2em; /* Tamanho do ícone */
-    margin-right: 10px; /* Espaço entre o ícone e o texto */
-    float: left; /* Alinha o ícone à esquerda */
+.skill-balloon:hover{
+transform:scale(1.05);
 }
 
-.skill-balloons h2 {
-    font-size: 2em; /* Tamanho do título */
-    margin-bottom: 20px; /* Espaço abaixo do título */
-    text-align: center; /* Centraliza o título */
-    color: #fff; /* Cor do texto */
+/* FORMAÇÕES */
+
+.education-container{
+margin-top:60px;
+padding:40px;
+background:rgba(0,0,0,0.6);
+border-radius:20px;
+color:#fff;
+text-align:center;
 }
 
-
-/* Estilo responsivo */
-@media (max-width: 700px) {
-    .about-me-container {
-        flex-direction: column; /* Altera o layout para coluna em telas pequenas */
-        align-items: center; /* Centraliza os itens */
-    }
-
-    .about-me {
-        margin-bottom: 20px; /* Adiciona espaço embaixo em telas pequenas */
-        width: 80%; /* Garante que ocupa a largura disponível */
-    }
-
-    .skill-balloons {
-        margin-left: 0; /* Remove margem esquerda em telas pequenas */
-        width: 80%; /* Garante que ocupa a largura disponível */
-    }
+.education{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+margin-top:30px;
 }
 
-/* Estilização da seção de formação acadêmica */
-.education-container {
-            margin-top: 50px;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            color: #fff;
-        }
-
-        .education h2 {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-
-        .education {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .degree {
-            margin: 10px;
-        }
-
-        .balloon {
-            background-color: rgba(255, 20, 147, 0.9);
-            border-radius: 15px;
-            padding: 15px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            width: 200px;
-            height: 130px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .balloon:hover {
-            transform: scale(1.05);
-            background-color: rgb(110, 8, 119);
-        }
-
-        .balloon h3 {
-            font-size: 1.2em;
-            margin-bottom: 5px;
-        }
-
-        .balloon p {
-            margin: 3px 0;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-5px);
-            }
-        }
-
-
-/* Estilização da seção de projetos */
-.projects-container {
-    margin-top: 50px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 50px;
-    color: #fff;
+.balloon{
+background:linear-gradient(135deg,#ff1493,#4b0082);
+border-radius:20px;
+padding:25px;
+width:240px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.4);
+transition:.3s;
 }
 
-.project {
-    margin: 20px 0;
-    text-align: center;
+.balloon:hover{
+transform:translateY(-10px) scale(1.05);
 }
 
-.project img {
-     width: 250px; /* Aumenta a largura da imagem */
-    height: auto; /* Mantém a proporção */
-    border-radius: 10px;
-    margin-bottom: 10px;
-    transition: transform 0.3s, box-shadow 0.3s; /* Adiciona transição suave */
+/* PROJETOS */
+
+.projects-container{
+margin-top:80px;
+padding:60px;
+background:rgba(0,0,0,0.6);
+border-radius:30px;
+color:white;
+max-width:1200px;
+margin-left:auto;
+margin-right:auto;
+text-align:center;
 }
 
-
-.project img:hover {
-    transform: scale(1.05); /* Aumenta levemente a imagem ao passar o mouse */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adiciona sombra ao passar o mouse */
-
+#lista-projetos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:40px;
+}
+.project{
+background:#b82774;
+border-radius:20px;
+padding:20px;
+color:white;
+box-shadow:0 10px 25px rgba(0,0,0,.4);
+transition:.3s;
 }
 
-.project a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: rgba(255, 20, 147, 0.9);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+.project:hover{
+transform:translateY(-10px) scale(1.03);
 }
 
-.project a:hover {
-    background-color: rgba(75, 0, 130, 1);
+/* CONTATO */
+
+.contact-container{
+text-align:center;
+padding:100px;
+color:#fff;
 }
 
-/* Estilização dos ícones de link */
-.link-balls {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+.contact-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
 }
 
-.link-ball {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin: 0 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.5em;
-    transition: transform 0.3s;
-    background-color: rgba(255, 20, 147, 0.9); /* Fundo rosa para a bolinha */
+.button{
+display:flex;
+align-items:center;
+justify-content:center;
+width:150px;
+height:50px;
+background: #ff1493;
+border-radius:8px;
+color:white;
+text-decoration:none;
+font-size:16px;
+transition:.3s;
 }
 
-.link-ball:hover {
-    transform: scale(1.2);
+.button:hover{
+transform:scale(1.1);
 }
 
-.contact-container {
-            text-align: center;
-            padding: 100px;
-            color: #fff;
-        }
-
-
-
-  .contact-buttons {
-            display: flex;
-            gap: 20px;
-        }
-        .button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 150px;
-            height: 50px;
-            background-color:rgba(255, 20, 147);
-            border: none;
-            border-radius: 5px;
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            transition: transform 0.3s, background-color 0.3s;
-        }
-        .button:hover {
-            transform: scale(1.1);
-            background-color: rgba(75, 0, 130, 1);
-        }
-        .button i {
-            margin-right: 8px;
-            border-radius: 50px;
-        }
-
-        .contact-container {
-    text-align: center;
-    padding: 100px;
-}
-
-.contact-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.container {
-    position: relative; /* Adicionado para permitir o posicionamento absoluto da bolinha */
-    text-align: center; /* Centraliza o conteúdo, se necessário */
-}
-
-.circle {
-            width: 60px; /* Tamanho da bolinha */
-            height: 60px; /* Tamanho da bolinha */
-            background-color: rgba(255, 20, 147);/* Cor da bolinha */
-            border-radius: 50%; /* Forma circular */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            bottom: 20px; /* Distância do fundo da página */
-            left: 50%;
-            transform: translateX(-50%); /* Centraliza horizontalmente */
-            animation: bounce 1s infinite; /* Animação de pulo */
-        }
-
-        .arrow {
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 20px solid #fff; /* Cor da setinha */
-            position: relative;
-            top: 5px; /* Ajuste para posicionar a seta dentro da bolinha */
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            50% {
-                transform: translateX(-50%) translateY(10px);
-            }
-        }
-
-
-
-        /* Estilização responsiva */
-@media (max-width: 600px) {
-    .circle {
-        width: 50px; /* Reduz o tamanho da bolinha em telas menores */
-        height: 50px; /* Reduz o tamanho da bolinha em telas menores */
-        bottom: 15px; /* Ajusta a distância do fundo */
-    }
-}
-           .arrow {
-        border-top: 15px solid #fff; /* Reduz o tamanho da seta em telas menores */
-    }
-
-
-
-    html {
-    scroll-behavior: smooth; /* Ativa a rolagem suave */
-}
-
-/* Estilizando a barra de rolagem */
-::-webkit-scrollbar {
-    width: 12px; /* Largura da barra de rolagem */
-    background: linear-gradient(to bottom, #000000, #ce1095); /* Fundo com gradiente */
-    border-radius: 10px; /* Barras com cantos arredondados */
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #ce1095, #000000); /* Parte que pode ser arrastada com gradiente */
-    border-radius: 10px; /* Cantos arredondados */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #ce1095, #000000); /* Cor ao passar o mouse */
-}
-
-::-webkit-scrollbar-track {
-    background: transparent; /* Fundo do caminho da barra de rolagem */
-    border-radius: 10px; /* Barras com cantos arredondados */
-}
-
-/* Estilizando a barra de rolagem no Firefox */
-body {
-    scrollbar-width: thin;
-    scrollbar-color: #007bff #f9f9f9; /* Cor da parte arrastável e do fundo */
-}
-
-.about-me-content {
-    max-width: 800px; /* Define uma largura máxima para o contêiner */
-    margin: 0 auto; /* Centraliza o contêiner */
-    padding: 20px; /* Adiciona um espaçamento interno */
-    white-space: normal; /* Permite quebras de linha normais */
-    overflow-wrap: break-word; /* Permite que palavras longas quebrem */
-}   
-
-
-/* Painel admin */
+/* ADMIN */
 
 .admin-panel{
-    margin-top:40px;
-    padding:30px;
-    max-width:500px;
-    margin-left:auto;
-    margin-right:auto;
-    background-color: rgba(255, 20, 147, 0.3);
-    backdrop-filter: blur(10px);
-    border-radius:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.3);
-    text-align:center;
+background:#111;
+border:2px solid #ff1493;
+padding:40px;
+margin:80px auto;
+max-width:900px;
+border-radius:25px;
+display:flex;
+flex-direction:column;
+gap:30px;
+box-shadow:0 0 20px #ff1493;
 }
 
-.admin-panel h3{
-    color:#fff;
-    margin-bottom:20px;
-    font-family:'Georgia', serif;
+.admin-section{
+background:#1a1919;
+padding:25px;
+border-radius:15px;
+display:flex;
+flex-direction:column;
+gap:10px;
+border:1px solid #a30fb1;
 }
 
-/* Formulário */
-
-.admin-form{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
+.admin-section input,
+.admin-section textarea{
+padding:12px;
+border-radius:10px;
+border:none;
+background:rgba(0, 0, 0, 0.5);
+color:white;
 }
 
-/* Inputs */
-
-.admin-form input{
-    padding:12px;
-    border-radius:10px;
-    border:none;
-    outline:none;
-    background-color: rgba(0,0,0,0.5);
-    color:white;
-    font-size:14px;
+.admin-btn{
+background:#ff1493;
+color:white;
+border:none;
+border-radius:25px;
+padding:12px;
+font-weight:bold;
+cursor:pointer;
 }
 
-/* Placeholder */
-
-.admin-form input::placeholder{
-    color: rgba(255,255,255,0.7);
+.admin-btn:hover{
+background:#c71585;
 }
 
-/* Botão */
 
-.admin-form button{
-    padding:12px;
-    border:none;
-    border-radius:25px;
-    background-color: rgba(255, 20, 147, 0.9);
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
+/* RESPONSIVO */
+
+@media(max-width:700px){
+
+.about-me-container{
+flex-direction:column;
+align-items:center;
 }
 
-.admin-form button:hover{
-    background-color: rgba(75, 0, 130, 1);
-    transform:scale(1.05);
+.about-me{
+width:90%;
 }
 
-.fade-in{
-
-opacity:0;
-transform:translateY(20px);
-animation:aparecer 0.6s forwards;
-
+.skill-balloons{
+width:90%;
 }
 
-@keyframes aparecer{
-
-to{
-
-opacity:1;
-transform:translateY(0);
+.link-balls{
+left:10px;
+}
 
 }
 
+
+/* LINKS GERAIS */
+
+a{
+color:#ff1493;
+text-decoration:none;
+transition:0.3s;
+}
+
+a:hover{
+color:#ffffff;
+}
+
+/* BOTÕES */
+
+.btn,
+button{
+display:inline-block;
+padding:12px 26px;
+border:none;
+border-radius:25px;
+background:linear-gradient(135deg,#ff1493,#4b0082);
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover,
+button:hover{
+transform:scale(1.08);
+background:linear-gradient(135deg,#4b0082,#ff1493);
 }
 
 .admin-buttons{
-
-margin-top:10px;
-
 display:flex;
-gap:10px;
 justify-content:center;
-
+gap:10px;
+margin-top:10px;
 }
 
-.admin-buttons button{
-
+.btn-editar{
+background:#4CAF50;
+color:white;
 border:none;
-padding:8px 14px;
-border-radius:8px;
+padding:6px 14px;
+border-radius:20px;
 cursor:pointer;
-background:rgba(255,20,147,0.9);
-color:white;
-
-transition:0.3s;
-
 }
 
-.admin-buttons button:hover{
+.btn-deletar{
+background:#ff4d4d;
+color:white;
+border:none;
+padding:6px 14px;
+border-radius:20px;
+cursor:pointer;
+}
 
+.btn-editar:hover,
+.btn-deletar:hover{
 transform:scale(1.1);
-background:rgba(75,0,130,1);
-
 }
 
-/* Esconde input padrão */
-.file-upload input{
-display:none;
-}
-
-/* Botão personalizado */
-
-.custom-file-upload{
-
-display:inline-block;
-padding:10px 20px;
-border-radius:25px;
-background-color: rgba(255,20,147,0.9);
+.admin-title{
 color:white;
-cursor:pointer;
-transition:0.3s;
+font-size:28px;
+text-align:center;
 font-weight:bold;
-
 }
 
-.custom-file-upload:hover{
+.admin-section h3{
+color:white;
+font-size:20px;
+margin-bottom:10px;
+}
 
-background-color: rgba(75,0,130,1);
+.project a{
+display:inline-block;
+margin:6px;
+padding:8px 16px;
+border-radius:20px;
+background:rgba(0,0,0,0.4);
+color:white;
+font-size:14px;
+transition:0.3s;
+}
+
+.project a:hover{
+background:#ff1493;
 transform:scale(1.05);
-
 }
 
+.admin-buttons{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-top:10px;
+}
 
+.btn-editar{
+background:#4CAF50;
+color:white;
+border:none;
+padding:6px 14px;
+border-radius:20px;
+cursor:pointer;
+}
 
+.btn-deletar{
+background:#ff4d4d;
+color:white;
+border:none;
+padding:6px 14px;
+border-radius:20px;
+cursor:pointer;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+.admin-section h3{
+color:white;
+font-size:22px;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.admin-section label{
+color:white;
+font-weight:bold;
+font-size:15px;
+}
+
+.admin-section input,
+.admin-section textarea{
+color:white;
+font-size:14px;
+}
+
+.admin-title{
+color:white;
+font-size:30px;
+text-align:center;
+font-weight:bold;
+letter-spacing:1px;
+margin-bottom:20px;
+}
