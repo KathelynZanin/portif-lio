@@ -592,3 +592,234 @@ font-weight:bold;
 letter-spacing:1px;
 margin-bottom:20px;
 }
+
+
+/* ── ESTILOS MOVIDOS DO INDEX.HTML ── */
+
+    /* ── HERO LAYOUT ── */
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .hero-foto {
+      flex-shrink: 0;
+    }
+
+    .foto-perfil {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ff1493;
+      box-shadow: 0 0 35px rgba(255,20,147,0.55);
+      animation: fadeIn 1s ease;
+      display: block;
+    }
+
+    .hero-texto {
+      text-align: left;
+      max-width: 560px;
+    }
+
+    .hero-texto h2 { text-align: left; margin: 0 0 8px; }
+    .hero-texto p  { margin: 6px 0; text-align: left; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 700px) {
+      .hero-inner { flex-direction: column; text-align: center; }
+      .hero-texto { text-align: center; }
+      .hero-texto h2, .hero-texto p { text-align: center; }
+    }
+
+    /* ── CERTIFICADOS ── */
+    .certificates-container {
+      margin-top: 60px;
+      padding: 40px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 20px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .certificates-container h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    #lista-certificados {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .cert-card {
+      background: linear-gradient(135deg, #1a0030, #3d0060);
+      border: 1px solid #ff1493;
+      border-radius: 16px;
+      padding: 24px 28px;
+      width: 240px;
+      text-align: left;
+      transition: .3s;
+      box-shadow: 0 8px 24px rgba(255,20,147,0.15);
+    }
+
+    .cert-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 12px 32px rgba(255,20,147,0.35);
+    }
+
+    .cert-card .cert-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #ff1493;
+    }
+
+    .cert-card h3 {
+      font-size: 1em;
+      margin: 0 0 8px;
+      color: #fff;
+    }
+
+    .cert-card p {
+      font-size: 0.85em;
+      color: #ccc;
+      margin: 2px 0;
+    }
+
+    .cert-badge {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: rgba(255,20,147,0.2);
+      color: #ff69b4;
+      font-size: 0.8em;
+      border: 1px solid rgba(255,20,147,0.4);
+    }
+
+    /* ── COMPETÊNCIAS ── */
+    .skills-container {
+      margin-top: 60px;
+      padding: 40px;
+      background: rgba(0,0,0,0.55);
+      border-radius: 20px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .skills-container h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 700px) {
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+
+    .skills-group {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,20,147,0.25);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: left;
+    }
+
+    .skills-group h3 {
+      font-size: 1em;
+      color: #ff69b4;
+      margin: 0 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82em;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    .tag-tech {
+      background: rgba(161,0,255,0.2);
+      border: 1px solid rgba(161,0,255,0.5);
+      color: #d580ff;
+    }
+
+    .tag-soft {
+      background: rgba(255,20,147,0.15);
+      border: 1px solid rgba(255,20,147,0.4);
+      color: #ff69b4;
+    }
+
+    .tag:hover {
+      transform: scale(1.08);
+    }
+
+    #lista-tudo {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 20px;
+    }
+    .loading {
+      color: #aaa;
+      font-style: italic;
+      font-size: 0.9em;
+    }
+
+    /* ── PROJETO CARD REFINADO ── */
+    .project {
+      background: linear-gradient(145deg, #2a0040, #1a0030) !important;
+      border: 1px solid rgba(255,20,147,0.35) !important;
+      border-radius: 18px !important;
+      padding: 20px !important;
+      text-align: center;
+      transition: .3s !important;
+      box-shadow: 0 8px 24px rgba(255,20,147,0.12) !important;
+    }
+
+    .project:hover {
+      transform: translateY(-8px) scale(1.02) !important;
+      box-shadow: 0 14px 36px rgba(255,20,147,0.3) !important;
+      border-color: #ff1493 !important;
+    }
+
+    .project h3 {
+      font-size: 1.1em;
+      color: #fff;
+      margin: 0 0 4px;
+    }
+
+    .project p {
+      font-size: 0.9em;
+      color: #ddd;
+      margin: 6px 0;
+    }
