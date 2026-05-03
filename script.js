@@ -79,8 +79,8 @@ id:1,
 nome:"API de Censo 2022",
 descricao:"Projeto em grupo com dados do censo.",
 imagem:"img/api.webp",
-github:"https://github.com/",
-vercel:"https://vercel.com/"
+github:"https://github.com/KathelynZanin",
+vercel:"https://api-censo-2022.vercel.app"
 },
 
 {
@@ -88,8 +88,8 @@ id:2,
 nome:"Doces Simples",
 descricao:"Site com receitas simples.",
 imagem:"img/doces.webp",
-github:"https://github.com/",
-vercel:"https://vercel.com/"
+github:"https://github.com/KathelynZanin",
+vercel:"https://doces-simples.vercel.app"
 }
 
 ];

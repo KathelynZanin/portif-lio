@@ -1,268 +1,480 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Portfólio</title>
-
-<link rel="icon" href="img/K.png" type="image/x-icon">
-
-<link rel="stylesheet" href="styles.css">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio — Kathelyn Zanin</title>
+  <link rel="icon" href="img/K.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
 </head>
-
 <body>
 
+
 <div class="background">
-<div class="ball ball1"></div>
-<div class="ball ball2"></div>
-<div class="ball ball3"></div>
+  <div class="ball ball1"></div>
+  <div class="ball ball2"></div>
+  <div class="ball ball3"></div>
 </div>
+
 
 <nav class="navbar" id="navbar">
-<a href="#sobre">Sobre</a>
-<a href="#projetos">Projetos</a>
-<a href="#contato">Contato</a>
-<a href="#admin-area" id="admin-link" style="display:none;">Editar Portfólio</a>
+  <a href="#sobre">Sobre</a>
+  <a href="#certificados">Formação & Cursos</a>
+  <a href="#competencias">Competências</a>
+  <a href="#projetos">Projetos</a>
+  <a href="#contato">Contato</a>
+  <a href="#admin-area" id="admin-link" style="display:none;">Editar Portfólio</a>
 </nav>
 
+
 <div class="container">
+  <h1 id="saudacao"></h1>
 
-<h1 id="saudacao"></h1>
-
-<h2 id="nome"></h2>
-
-<p id="titulo"></p>
-
-<p id="descricao"></p>
-
-<div class="buttons">
-
-<a href="#projetos" class="btn">Ver Projetos</a>
-
-<a href="#contato" class="btn">Entrar em Contato</a>
-
+  <div class="hero-inner">
+    <div class="hero-foto">
+      <img
+        src="img/foto.jpeg"
+        alt="Foto de perfil de Kathelyn Zanin"
+        class="foto-perfil"
+        onerror="this.src='img/K.png'"
+      >
+    </div>
+    <div class="hero-texto">
+      <h2 id="nome"></h2>
+      <p id="titulo"></p>
+      <p id="descricao"></p>
+      <div class="buttons" style="margin-top:16px">
+        <a href="#projetos" class="btn">Ver Projetos</a>
+        <a href="#contato" class="btn">Entrar em Contato</a>
+      </div>
+    </div>
+  </div>
 </div>
 
-</div>
-
-</div>
 
 <div class="link-balls">
-
-<a href="https://github.com/KathelynZanin" class="link-ball github-ball" target="_blank">
-<i class="fab fa-github"></i>
-</a>
-
-<a href="mailto:kathelynzanin@gmail.com" class="link-ball email-ball">
-<i class="fas fa-envelope"></i>
-</a>
-
+  <a href="https://github.com/KathelynZanin" class="link-ball github-ball" target="_blank">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="mailto:kathelynzanin@gmail.com" class="link-ball email-ball">
+    <i class="fas fa-envelope"></i>
+  </a>
 </div>
-
-<!-- SOBRE MIM -->
 
 <div class="about-me-container" id="sobre">
+  <div class="about-me">
+    <h2>Sobre Mim</h2>
+    <p id="sobreTexto"></p>
+    <p>Concluí o técnico em Administração na ETEC, onde desenvolvi habilidades de gestão e organização.</p>
+    <p>Agora, na FATEC, estou mergulhando no universo do desenvolvimento, aprendendo sobre front-end, back-end e muito mais.</p>
+    <p>Estou focada em aprender HTML, CSS, JavaScript, React e outras tecnologias modernas.</p>
+  </div>
 
-<div class="about-me">
-
-<h2>Sobre Mim</h2>
-
-<p id="sobreTexto"></p>
-
-<p>
-Concluí o técnico em Administração na ETEC, onde desenvolvi habilidades de gestão e organização.
-</p>
-
-<p>
-Agora, na FATEC, estou mergulhando no universo do desenvolvimento, aprendendo sobre front-end, back-end e muito mais.
-</p>
-
-<p>
-Estou focada em aprender HTML, CSS, JavaScript, React e outras tecnologias modernas.
-</p>
-
+  <div class="skill-balloons">
+    <div class="skill-balloon">
+      <i class="fas fa-code"></i>
+      <h3>Aprendendo Front-end</h3>
+      <p>Estudando HTML, CSS, JavaScript, React e outras tecnologias web.</p>
+    </div>
+    <div class="skill-balloon">
+      <i class="fas fa-clipboard-list"></i>
+      <h3>Background em Administração</h3>
+      <p>Conhecimento em gestão, organização e processos empresariais.</p>
+    </div>
+    <div class="skill-balloon">
+      <i class="fas fa-lightbulb"></i>
+      <h3>Pensamento Analítico</h3>
+      <p>Habilidade em resolver problemas e aprender novas tecnologias rapidamente.</p>
+    </div>
+  </div>
 </div>
 
-<div class="skill-balloons">
 
-<div class="skill-balloon">
-
-<i class="fas fa-code"></i>
-
-<h3>Aprendendo Front-end</h3>
-
-<p>Estudando HTML, CSS, JavaScript, React e outras tecnologias web.</p>
-
+<div class="education-container" id="certificados">
+  <h2>Formação Acadêmica & Cursos</h2>
+  <div class="education" id="lista-tudo">
+    <p class="loading">Carregando...</p>
+  </div>
 </div>
 
-<div class="skill-balloon">
 
-<i class="fas fa-clipboard-list"></i>
-
-<h3>Background em Administração</h3>
-
-<p>Conhecimento em gestão, organização e processos empresariais.</p>
-
+<div class="skills-container" id="competencias">
+  <h2>Competências</h2>
+  <div class="skills-grid" id="skills-grid">
+    <p class="loading">Carregando competências...</p>
+  </div>
 </div>
 
-<div class="skill-balloon">
-
-<i class="fas fa-lightbulb"></i>
-
-<h3>Pensamento Analítico</h3>
-
-<p>Habilidade em resolver problemas e aprender novas tecnologias rapidamente.</p>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- FORMAÇÃO -->
-
-<div class="education-container">
-
-<h2>Formação Acadêmica e Certificados</h2>
-
-<div class="education" id="lista-formacoes"></div>
-
-</div>
-
-<!-- PROJETOS -->
 
 <div class="projects-container" id="projetos">
-
-<h2>Projetos</h2>
-
-<div id="lista-projetos"></div>
-
+  <h2>Projetos</h2>
+  <div id="lista-projetos">
+    <p class="loading">Carregando projetos...</p>
+  </div>
 </div>
 
-<!-- CONTATO -->
 
 <div class="contact-container" id="contato">
-
-<h2>Entre em Contato</h2>
-
-<p>Se quiser conversar, fique à vontade para me chamar.</p>
-
-<div class="contact-buttons">
-
-<a class="button" href="https://github.com/KathelynZanin" target="_blank">
-<i class="fab fa-github"></i> GitHub
-</a>
-
-<a class="button" href="mailto:kathelynzanin@gmail.com">
-<i class="fas fa-envelope"></i> Email
-</a>
-
-<a class="button" href="https://www.linkedin.com/" target="_blank">
-<i class="fab fa-linkedin"></i> LinkedIn
-</a>
-
+  <h2>Entre em Contato</h2>
+  <p>Se quiser conversar, fique à vontade para me chamar.</p>
+  <div class="contact-buttons">
+    <a class="button" href="https://github.com/KathelynZanin" target="_blank">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+    <a class="button" href="mailto:kathelynzanin@gmail.com">
+      <i class="fas fa-envelope"></i> Email
+    </a>
+    <a class="button" href="https://www.linkedin.com/in/kathelynzanin/" target="_blank">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+  </div>
 </div>
 
-</div>
-
-<!-- BOTÃO ADMIN -->
 
 <button onclick="loginAdmin()" style="position:fixed; bottom:20px; right:20px;">
-Admin
+  Admin
 </button>
-
-<!-- PAINEL ADMIN -->
 
 <div id="admin-area" class="admin-panel" style="display:none;">
+  <h2 class="admin-title">Painel Administrativo</h2>
 
-<h2 class="admin-title">Painel Administrativo</h2>
+  <div class="admin-section">
+    <h3>Editar Portfólio</h3>
+    <label>Nome</label>
+    <input id="editNome" placeholder="Seu nome">
+    <label>Título profissional</label>
+    <input id="editTitulo" placeholder="Ex: Desenvolvedora Front-end">
+    <label>Descrição</label>
+    <textarea id="editDescricao" placeholder="Descrição curta"></textarea>
+    <label>Texto Sobre</label>
+    <textarea id="editSobre" placeholder="Texto sobre você"></textarea>
+    <button class="admin-btn salvar" onclick="salvarPortfolio()">Salvar Portfólio</button>
+  </div>
 
-<!-- EDITAR PORTFÓLIO -->
+  <div class="admin-section">
+    <h3>Adicionar Formação</h3>
+    <label>Instituição</label>
+    <input id="nomeFormacao" placeholder="Ex: FATEC">
+    <label>Curso</label>
+    <input id="cursoFormacao" placeholder="Nome do curso">
+    <label>Status</label>
+    <input id="statusFormacao" placeholder="Ex: Concluído ou Em andamento">
+    <button class="admin-btn adicionar" onclick="criarFormacao()">Adicionar Formação</button>
+  </div>
 
-<div class="admin-section">
+  <div class="admin-section">
+    <h3>Adicionar Certificado</h3>
+    <label>Nome do curso/certificado</label>
+    <input id="nomeCert" placeholder="Ex: Escola de Inovadores">
+    <label>Instituição</label>
+    <input id="instCert" placeholder="Ex: INOVA CPS">
+    <label>Carga horária (horas)</label>
+    <input id="horaCert" type="number" placeholder="Ex: 40">
+    <label>Ano</label>
+    <input id="anoCert" type="number" placeholder="Ex: 2025">
+    <button class="admin-btn adicionar" onclick="criarCertificado()">Adicionar Certificado</button>
+  </div>
 
-<h3>Editar Portfólio</h3>
-
-<label>Nome</label>
-<input id="editNome" placeholder="Seu nome">
-
-<label>Título profissional</label>
-<input id="editTitulo" placeholder="Ex: Desenvolvedora Front-end">
-
-<label>Descrição</label>
-<textarea id="editDescricao" placeholder="Descrição curta"></textarea>
-
-<label>Texto Sobre</label>
-<textarea id="editSobre" placeholder="Texto sobre você"></textarea>
-
-<button class="admin-btn salvar" onclick="salvarPortfolio()">
-Salvar Portfólio
-</button>
-
+  <div class="admin-section">
+    <h3>Adicionar Projeto</h3>
+    <label>Nome do Projeto</label>
+    <input id="nomeProjeto" placeholder="Nome do projeto">
+    <label>Descrição</label>
+    <textarea id="descricaoProjeto" placeholder="Descrição do projeto"></textarea>
+    <label>Tecnologias (separadas por vírgula)</label>
+    <input id="tecsProjeto" placeholder="Ex: Python, Flask, MySQL">
+    <label>GitHub</label>
+    <input id="githubProjeto" placeholder="Link do GitHub">
+    <label>Site / Vercel</label>
+    <input id="vercelProjeto" placeholder="Link do site">
+    <button class="admin-btn adicionar" onclick="criarProjeto()">Adicionar Projeto</button>
+  </div>
 </div>
 
-<!-- FORMAÇÃO -->
+<script>
+  const API = "http://localhost:5000";
 
-<div class="admin-section">
+ 
+  let portfolio = JSON.parse(localStorage.getItem("portfolio")) || {
+    nome: "Kathelyn Cauane de Oliveira Zanin",
+    titulo: "Dev Iniciante | Estudante de DSM | Explorando o mundo do desenvolvimento",
+    descricao: "Técnico em Administração pela ETEC, agora cursando Desenvolvimento de Software Multiplataforma na FATEC.",
+    sobre: "Sou estudante de Desenvolvimento de Software Multiplataforma apaixonada por tecnologia."
+  };
 
-<h3>Adicionar Formação</h3>
+  function carregarPortfolio() {
+    document.getElementById("nome").textContent      = portfolio.nome;
+    document.getElementById("titulo").textContent    = portfolio.titulo;
+    document.getElementById("descricao").textContent = portfolio.descricao;
+    document.getElementById("sobreTexto").textContent = portfolio.sobre;
+  }
 
-<label>Instituição</label>
-<input id="nomeFormacao" placeholder="Ex: FATEC">
+  function salvarPortfolio() {
+    portfolio.nome      = document.getElementById("editNome").value;
+    portfolio.titulo    = document.getElementById("editTitulo").value;
+    portfolio.descricao = document.getElementById("editDescricao").value;
+    portfolio.sobre     = document.getElementById("editSobre").value;
+    localStorage.setItem("portfolio", JSON.stringify(portfolio));
+    carregarPortfolio();
+    alert("Portfólio atualizado!");
+  }
 
-<label>Curso</label>
-<input id="cursoFormacao" placeholder="Nome do curso">
 
-<label>Status</label>
-<input id="statusFormacao" placeholder="Ex: Concluído ou Em andamento">
+  function atualizarSaudacao() {
+    const el   = document.getElementById("saudacao");
+    if (!el) return;
+    const hora = new Date().getHours();
+    el.textContent = hora < 12 ? "Bom dia!" : hora < 18 ? "Boa tarde!" : "Boa noite!";
+  }
 
-<button class="admin-btn adicionar" onclick="criarFormacao()">
-Adicionar Formação
-</button>
+  window.onscroll = function () {
+    const navbar = document.getElementById("navbar");
+    navbar.classList.toggle("scrolled", document.documentElement.scrollTop > 50);
+  };
 
-</div>
 
-<!-- PROJETOS -->
+  let modoAdmin = false;
 
-<div class="admin-section">
+  async function mostrarProjetos() {
+    const container = document.getElementById("lista-projetos");
+    try {
+      const res      = await fetch(`${API}/projetos`);
+      const projetos = await res.json();
+      container.innerHTML = "";
 
-<h3>Adicionar Projeto</h3>
+      if (projetos.length === 0) {
+        container.innerHTML = "<p style='color:#aaa'>Nenhum projeto ainda.</p>";
+        return;
+      }
 
-<label>Nome do Projeto</label>
-<input id="nomeProjeto" placeholder="Nome do projeto">
+      projetos.forEach(p => {
+        const tecsTags = (p.tecnologias || [])
+          .map(t => `<span class="tag tag-tech">${t}</span>`)
+          .join("");
 
-<label>Descrição</label>
-<textarea id="descricaoProjeto" placeholder="Descrição do projeto"></textarea>
+        const imgHtml = p.imagem
+          ? `<img src="${p.imagem}" alt="${p.nome}" style="width:100%;height:160px;object-fit:cover;border-radius:12px;margin:12px 0">`
+          : "";
 
-<label>GitHub</label>
-<input id="githubProjeto" placeholder="Link do GitHub">
+        container.innerHTML += `
+          <div class="project">
+            <h3 style="margin:0 0 4px">${p.nome}</h3>
+            ${imgHtml}
+            <p style="margin:8px 0">${p.descricao}</p>
+            <div class="tags" style="justify-content:center;margin:10px 0">${tecsTags}</div>
+            <div style="display:flex;justify-content:center;gap:10px;margin-top:10px">
+              <a href="${p.github}" target="_blank">GitHub</a>
+              <a href="${p.site}"   target="_blank">Ver Site</a>
+            </div>
+            ${modoAdmin ? `
+              <div class="admin-buttons">
+                <button class="btn-editar"  onclick="editarProjeto(${p.id})">✏️ Editar</button>
+                <button class="btn-deletar" onclick="deletarProjeto(${p.id})">🗑 Deletar</button>
+              </div>` : ""}
+          </div>`;
+      });
+    } catch {
+      container.innerHTML = "<p style='color:#f88'>Erro ao conectar na API. Verifique se o Flask está rodando.</p>";
+    }
+  }
 
-<label>Site / Vercel</label>
-<input id="vercelProjeto" placeholder="Link do site">
+  async function criarProjeto() {
+    const nome      = document.getElementById("nomeProjeto").value;
+    const descricao = document.getElementById("descricaoProjeto").value;
+    const tecs      = document.getElementById("tecsProjeto").value.split(",").map(t => t.trim()).filter(Boolean);
+    const github    = document.getElementById("githubProjeto").value;
+    const site      = document.getElementById("vercelProjeto").value;
 
-<div class="file-upload">
+    await fetch(`${API}/projetos`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ nome, descricao, tecnologias: tecs, github, site })
+    });
 
-<label for="imagemProjeto" class="custom-file-upload">
-📷 Escolher Imagem
-</label>
+    document.getElementById("nomeProjeto").value      = "";
+    document.getElementById("descricaoProjeto").value = "";
+    document.getElementById("tecsProjeto").value      = "";
+    document.getElementById("githubProjeto").value    = "";
+    document.getElementById("vercelProjeto").value    = "";
+    mostrarProjetos();
+  }
 
-<input type="file" id="imagemProjeto">
+  async function deletarProjeto(id) {
+    await fetch(`${API}/projetos/${id}`, { method: "DELETE" });
+    mostrarProjetos();
+  }
 
-</div>
+  async function editarProjeto(id) {
+    const novoNome = prompt("Novo nome do projeto:");
+    const novaDesc = prompt("Nova descrição:");
+    if (!novoNome && !novaDesc) return;
+    await fetch(`${API}/projetos/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ nome: novoNome, descricao: novaDesc })
+    });
+    mostrarProjetos();
+  }
 
-<button class="admin-btn adicionar" onclick="criarProjeto()">
-Adicionar Projeto
-</button>
 
-</div>
+  async function mostrarTudo() {
+    const container = document.getElementById("lista-tudo");
+    try {
+      const [resF, resC] = await Promise.all([
+        fetch(`${API}/formacoes`),
+        fetch(`${API}/certificados`)
+      ]);
+      const formacoes    = await resF.json();
+      const certificados = await resC.json();
+      container.innerHTML = "";
 
-</div>
-<script src="script.js"></script>
+  
+      formacoes.forEach(f => {
+        container.innerHTML += `
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fas fa-graduation-cap"></i></div>
+            <h3>${f.instituicao}</h3>
+            <p><i class="fas fa-book" style="margin-right:5px;font-size:.8em"></i>${f.curso}</p>
+            <span class="cert-badge">${f.status}</span>
+            ${modoAdmin ? `
+              <div class="admin-buttons" style="margin-top:10px">
+                <button class="btn-editar"  onclick="editarFormacao(${f.id})">✏️ Editar</button>
+                <button class="btn-deletar" onclick="deletarFormacao(${f.id})">🗑 Deletar</button>
+              </div>` : ""}
+          </div>`;
+      });
 
+ 
+      certificados.forEach(c => {
+        container.innerHTML += `
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+            <h3>${c.nome}</h3>
+            <p><i class="fas fa-building" style="margin-right:5px;font-size:.8em"></i>${c.instituicao}</p>
+            <p><i class="fas fa-clock" style="margin-right:5px;font-size:.8em"></i>${c.carga_horaria}h &nbsp;|&nbsp; ${c.ano}</p>
+            <span class="cert-badge">Concluído</span>
+            ${modoAdmin ? `
+              <div class="admin-buttons" style="margin-top:10px">
+                <button class="btn-deletar" onclick="deletarCertificado(${c.id})">🗑 Remover</button>
+              </div>` : ""}
+          </div>`;
+      });
+    } catch {
+      container.innerHTML = "<p style='color:#f88'>Erro ao conectar na API.</p>";
+    }
+  }
+
+  async function mostrarFormacoes() { await mostrarTudo(); }
+  async function mostrarCertificados() { await mostrarTudo(); }
+
+  async function criarFormacao() {
+    const instituicao = document.getElementById("nomeFormacao").value;
+    const curso       = document.getElementById("cursoFormacao").value;
+    const status      = document.getElementById("statusFormacao").value;
+    await fetch(`${API}/formacoes`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ instituicao, curso, status })
+    });
+    document.getElementById("nomeFormacao").value   = "";
+    document.getElementById("cursoFormacao").value  = "";
+    document.getElementById("statusFormacao").value = "";
+    mostrarTudo();
+  }
+
+  async function deletarFormacao(id) {
+    await fetch(`${API}/formacoes/${id}`, { method: "DELETE" });
+    mostrarTudo();
+  }
+
+  async function editarFormacao(id) {
+    const novaInst   = prompt("Nova instituição:");
+    const novoCurso  = prompt("Novo curso:");
+    const novoStatus = prompt("Novo status:");
+    await fetch(`${API}/formacoes/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ instituicao: novaInst, curso: novoCurso, status: novoStatus })
+    });
+    mostrarTudo();
+  }
+
+  async function criarCertificado() {
+    const nome         = document.getElementById("nomeCert").value;
+    const instituicao  = document.getElementById("instCert").value;
+    const carga_horaria = parseInt(document.getElementById("horaCert").value) || 0;
+    const ano          = parseInt(document.getElementById("anoCert").value)  || 2025;
+    await fetch(`${API}/certificados`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ nome, instituicao, carga_horaria, ano })
+    });
+    document.getElementById("nomeCert").value  = "";
+    document.getElementById("instCert").value  = "";
+    document.getElementById("horaCert").value  = "";
+    document.getElementById("anoCert").value   = "";
+    mostrarCertificados();
+  }
+
+  async function deletarCertificado(id) {
+    await fetch(`${API}/certificados/${id}`, { method: "DELETE" });
+    mostrarCertificados();
+  }
+
+  // ── COMPETÊNCIAS (API Flask) ──────────────────────────────
+  async function mostrarCompetencias() {
+    const grid = document.getElementById("skills-grid");
+    try {
+      const res  = await fetch(`${API}/competencias`);
+      const comp = await res.json();
+
+      const tecTags  = (comp.tecnicas      || []).map(t => `<span class="tag tag-tech">${t}</span>`).join("");
+      const softTags = (comp.interpessoais || []).map(t => `<span class="tag tag-soft">${t}</span>`).join("");
+
+      grid.innerHTML = `
+        <div class="skills-group">
+          <h3><i class="fas fa-laptop-code"></i> Competências Técnicas</h3>
+          <div class="tags">${tecTags}</div>
+        </div>
+        <div class="skills-group">
+          <h3><i class="fas fa-users"></i> Soft Skills</h3>
+          <div class="tags">${softTags}</div>
+        </div>`;
+    } catch {
+      grid.innerHTML = "<p style='color:#f88'>Erro ao conectar na API.</p>";
+    }
+  }
+
+  // ── ADMIN ────────────────────────────────────────────────
+  function loginAdmin() {
+    const senha = prompt("Digite a senha de administrador:");
+    if (senha === "1234") {
+      modoAdmin = true;
+      document.getElementById("admin-area").style.display = "block";
+      const adminLink = document.getElementById("admin-link");
+      if (adminLink) adminLink.style.display = "inline-block";
+      document.getElementById("editNome").value      = portfolio.nome;
+      document.getElementById("editTitulo").value    = portfolio.titulo;
+      document.getElementById("editDescricao").value = portfolio.descricao;
+      document.getElementById("editSobre").value     = portfolio.sobre;
+      mostrarProjetos();
+      mostrarTudo();
+      alert("Modo administrador ativado!");
+    } else {
+      alert("Senha incorreta.");
+    }
+  }
+
+  // ── INIT ─────────────────────────────────────────────────
+  document.addEventListener("DOMContentLoaded", function () {
+    carregarPortfolio();
+    atualizarSaudacao();
+    mostrarProjetos();
+    mostrarTudo();
+    mostrarCompetencias();
+  });
+</script>
 </body>
 </html>
