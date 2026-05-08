@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app) 
+CORS(app)
 
 
 projetos = [
@@ -57,10 +57,7 @@ competencias = {
     "interpessoais": ["Comunicação", "Organização", "Trabalho em equipe", "Pensamento analítico", "Aprendizado rápido"]
 }
 
-
-proximo_id = {"projetos": 3, "formacoes": 3, "certificados": 3}
-
-
+proximo_id = {"projetos": 3, "formacoes": 2, "certificados": 3}
 
 
 @app.route("/")
@@ -68,46 +65,29 @@ def index():
     return jsonify({
         "mensagem": "API do Portfólio da Kathelyn está funcionando!",
         "rotas_disponíveis": [
-            "GET  /projetos",
-            "POST /projetos",
-            "PUT  /projetos/<id>",
-            "DELETE /projetos/<id>",
-            "GET  /formacoes",
-            "POST /formacoes",
-            "PUT  /formacoes/<id>",
-            "DELETE /formacoes/<id>",
-            "GET  /certificados",
-            "POST /certificados",
-            "DELETE /certificados/<id>",
-            "GET  /competencias",
-            "PUT  /competencias"
+            "GET  /projetos", "POST /projetos", "PUT  /projetos/<id>", "DELETE /projetos/<id>",
+            "GET  /formacoes", "POST /formacoes", "PUT  /formacoes/<id>", "DELETE /formacoes/<id>",
+            "GET  /certificados", "POST /certificados", "PUT  /certificados/<id>", "DELETE /certificados/<id>",
+            "GET  /competencias", "PUT  /competencias"
         ]
     })
 
-
-# ============================================================
-# PROJETOS
-# ============================================================
-
+# ── PROJETOS ──────────────────────────────────────────────
 @app.route("/projetos", methods=["GET"])
 def listar_projetos():
-    """Retorna todos os projetos."""
     return jsonify(projetos), 200
-
 
 @app.route("/projetos", methods=["POST"])
 def criar_projeto():
-    """Cria um novo projeto."""
     dados = request.get_json()
-
     if not dados or not dados.get("nome"):
         return jsonify({"erro": "O campo 'nome' é obrigatório."}), 400
-
     novo = {
         "id": proximo_id["projetos"],
         "nome": dados.get("nome"),
         "descricao": dados.get("descricao", ""),
         "tecnologias": dados.get("tecnologias", []),
+        "imagem": dados.get("imagem", ""),
         "github": dados.get("github", ""),
         "site": dados.get("site", "")
     }
@@ -115,56 +95,39 @@ def criar_projeto():
     projetos.append(novo)
     return jsonify(novo), 201
 
-
 @app.route("/projetos/<int:projeto_id>", methods=["PUT"])
 def atualizar_projeto(projeto_id):
-    """Atualiza um projeto existente pelo ID."""
     projeto = next((p for p in projetos if p["id"] == projeto_id), None)
-
     if not projeto:
         return jsonify({"erro": f"Projeto com id {projeto_id} não encontrado."}), 404
-
     dados = request.get_json()
-    projeto["nome"]        = dados.get("nome", projeto["nome"])
-    projeto["descricao"]   = dados.get("descricao", projeto["descricao"])
+    projeto["nome"]        = dados.get("nome",        projeto["nome"])
+    projeto["descricao"]   = dados.get("descricao",   projeto["descricao"])
     projeto["tecnologias"] = dados.get("tecnologias", projeto["tecnologias"])
-    projeto["github"]      = dados.get("github", projeto["github"])
-    projeto["site"]        = dados.get("site", projeto["site"])
-
+    projeto["imagem"]      = dados.get("imagem",      projeto["imagem"])
+    projeto["github"]      = dados.get("github",      projeto["github"])
+    projeto["site"]        = dados.get("site",        projeto["site"])
     return jsonify(projeto), 200
-
 
 @app.route("/projetos/<int:projeto_id>", methods=["DELETE"])
 def deletar_projeto(projeto_id):
-    """Remove um projeto pelo ID."""
     global projetos
-    tamanho_antes = len(projetos)
+    antes = len(projetos)
     projetos = [p for p in projetos if p["id"] != projeto_id]
-
-    if len(projetos) == tamanho_antes:
+    if len(projetos) == antes:
         return jsonify({"erro": f"Projeto com id {projeto_id} não encontrado."}), 404
-
     return jsonify({"mensagem": f"Projeto {projeto_id} removido com sucesso."}), 200
 
-
-# ============================================================
-# FORMAÇÕES
-# ============================================================
-
+# ── FORMAÇÕES ─────────────────────────────────────────────
 @app.route("/formacoes", methods=["GET"])
 def listar_formacoes():
-    """Retorna todas as formações acadêmicas."""
     return jsonify(formacoes), 200
-
 
 @app.route("/formacoes", methods=["POST"])
 def criar_formacao():
-    """Adiciona uma nova formação."""
     dados = request.get_json()
-
     if not dados or not dados.get("instituicao"):
         return jsonify({"erro": "O campo 'instituicao' é obrigatório."}), 400
-
     nova = {
         "id": proximo_id["formacoes"],
         "instituicao": dados.get("instituicao"),
@@ -175,54 +138,36 @@ def criar_formacao():
     formacoes.append(nova)
     return jsonify(nova), 201
 
-
 @app.route("/formacoes/<int:formacao_id>", methods=["PUT"])
 def atualizar_formacao(formacao_id):
-    """Atualiza uma formação existente."""
     formacao = next((f for f in formacoes if f["id"] == formacao_id), None)
-
     if not formacao:
         return jsonify({"erro": f"Formação com id {formacao_id} não encontrada."}), 404
-
     dados = request.get_json()
     formacao["instituicao"] = dados.get("instituicao", formacao["instituicao"])
-    formacao["curso"]       = dados.get("curso", formacao["curso"])
-    formacao["status"]      = dados.get("status", formacao["status"])
-
+    formacao["curso"]       = dados.get("curso",       formacao["curso"])
+    formacao["status"]      = dados.get("status",      formacao["status"])
     return jsonify(formacao), 200
-
 
 @app.route("/formacoes/<int:formacao_id>", methods=["DELETE"])
 def deletar_formacao(formacao_id):
-    """Remove uma formação pelo ID."""
     global formacoes
-    tamanho_antes = len(formacoes)
+    antes = len(formacoes)
     formacoes = [f for f in formacoes if f["id"] != formacao_id]
-
-    if len(formacoes) == tamanho_antes:
+    if len(formacoes) == antes:
         return jsonify({"erro": f"Formação com id {formacao_id} não encontrada."}), 404
-
     return jsonify({"mensagem": f"Formação {formacao_id} removida com sucesso."}), 200
 
-
-# ============================================================
-# CERTIFICADOS
-# ============================================================
-
+# ── CERTIFICADOS ──────────────────────────────────────────
 @app.route("/certificados", methods=["GET"])
 def listar_certificados():
-    """Retorna todos os certificados."""
     return jsonify(certificados), 200
-
 
 @app.route("/certificados", methods=["POST"])
 def criar_certificado():
-    """Adiciona um novo certificado."""
     dados = request.get_json()
-
     if not dados or not dados.get("nome"):
         return jsonify({"erro": "O campo 'nome' é obrigatório."}), 400
-
     novo = {
         "id": proximo_id["certificados"],
         "nome": dados.get("nome"),
@@ -234,44 +179,40 @@ def criar_certificado():
     certificados.append(novo)
     return jsonify(novo), 201
 
+@app.route("/certificados/<int:cert_id>", methods=["PUT"])
+def atualizar_certificado(cert_id):
+    cert = next((c for c in certificados if c["id"] == cert_id), None)
+    if not cert:
+        return jsonify({"erro": f"Certificado com id {cert_id} não encontrado."}), 404
+    dados = request.get_json()
+    cert["nome"]          = dados.get("nome",          cert["nome"])
+    cert["carga_horaria"] = dados.get("carga_horaria", cert["carga_horaria"])
+    cert["ano"]           = dados.get("ano",           cert["ano"])
+    cert["instituicao"]   = dados.get("instituicao",   cert["instituicao"])
+    return jsonify(cert), 200
 
 @app.route("/certificados/<int:cert_id>", methods=["DELETE"])
 def deletar_certificado(cert_id):
-    """Remove um certificado pelo ID."""
     global certificados
-    tamanho_antes = len(certificados)
+    antes = len(certificados)
     certificados = [c for c in certificados if c["id"] != cert_id]
-
-    if len(certificados) == tamanho_antes:
+    if len(certificados) == antes:
         return jsonify({"erro": f"Certificado com id {cert_id} não encontrado."}), 404
-
     return jsonify({"mensagem": f"Certificado {cert_id} removido com sucesso."}), 200
 
-
-# ============================================================
-# COMPETÊNCIAS
-# ============================================================
-
+# ── COMPETÊNCIAS ──────────────────────────────────────────
 @app.route("/competencias", methods=["GET"])
 def listar_competencias():
-    """Retorna as competências técnicas e interpessoais."""
     return jsonify(competencias), 200
-
 
 @app.route("/competencias", methods=["PUT"])
 def atualizar_competencias():
-    """Atualiza a lista de competências (substitui por completo)."""
     dados = request.get_json()
     if dados.get("tecnicas"):
         competencias["tecnicas"] = dados["tecnicas"]
     if dados.get("interpessoais"):
         competencias["interpessoais"] = dados["interpessoais"]
     return jsonify(competencias), 200
-
-
-# ============================================================
-# INICIAR O SERVIDOR
-# ============================================================
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
