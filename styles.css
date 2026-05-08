@@ -8,7 +8,7 @@ scrollbar-width:thin;
 scrollbar-color:#ce1095 #000;
 }
 
-/* BACKGROUND */
+
 
 .background{
 position:absolute;
@@ -60,7 +60,6 @@ animation-delay:2s;
 75%{transform:translate(0,0);}
 }
 
-/* NAVBAR */
 
 .navbar{
 display:flex;
@@ -100,7 +99,7 @@ transition:.3s;
 transform:scaleX(1);
 }
 
-/* HERO */
+
 
 .container{
 display:flex;
@@ -131,7 +130,7 @@ max-width:800px;
 margin:20px auto;
 }
 
-/* BOTÕES PRINCIPAIS */
+
 
 .buttons{
 margin-top:20px;

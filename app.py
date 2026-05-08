@@ -68,7 +68,7 @@ def index():
             "GET  /projetos", "POST /projetos", "PUT  /projetos/<id>", "DELETE /projetos/<id>",
             "GET  /formacoes", "POST /formacoes", "PUT  /formacoes/<id>", "DELETE /formacoes/<id>",
             "GET  /certificados", "POST /certificados", "PUT  /certificados/<id>", "DELETE /certificados/<id>",
-            "GET  /competencias", "PUT  /competencias"
+            "GET  /competencias", "POST /competencias", "PUT  /competencias", "DELETE /competencias/<tipo>/<nome>"
         ]
     })
 
@@ -212,6 +212,40 @@ def atualizar_competencias():
         competencias["tecnicas"] = dados["tecnicas"]
     if dados.get("interpessoais"):
         competencias["interpessoais"] = dados["interpessoais"]
+    return jsonify(competencias), 200
+
+
+@app.route("/competencias", methods=["POST"])
+def adicionar_competencia():
+    """Adiciona uma competência em 'tecnicas' ou 'interpessoais'."""
+    dados = request.get_json()
+
+    tipo = dados.get("tipo")   # "tecnicas" ou "interpessoais"
+    nome = dados.get("nome")
+
+    if not tipo or tipo not in ("tecnicas", "interpessoais"):
+        return jsonify({"erro": "O campo 'tipo' deve ser 'tecnicas' ou 'interpessoais'."}), 400
+
+    if not nome:
+        return jsonify({"erro": "O campo 'nome' é obrigatório."}), 400
+
+    if nome in competencias[tipo]:
+        return jsonify({"erro": f"'{nome}' já existe em {tipo}."}), 409
+
+    competencias[tipo].append(nome)
+    return jsonify(competencias), 201
+
+
+@app.route("/competencias/<string:tipo>/<string:nome>", methods=["DELETE"])
+def deletar_competencia(tipo, nome):
+    """Remove uma competência pelo tipo e nome."""
+    if tipo not in ("tecnicas", "interpessoais"):
+        return jsonify({"erro": "Tipo deve ser 'tecnicas' ou 'interpessoais'."}), 400
+
+    if nome not in competencias[tipo]:
+        return jsonify({"erro": f"'{nome}' não encontrado em {tipo}."}), 404
+
+    competencias[tipo].remove(nome)
     return jsonify(competencias), 200
 
 if __name__ == "__main__":
